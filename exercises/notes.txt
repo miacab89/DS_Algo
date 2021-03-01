@@ -1,0 +1,5 @@
+IMPORTANT NOTES
+
+When iterating in a for loop for an object, you will use 'for', 'in'
+When iterating in a for loop for an array, you will use 'for', 'of'
+
