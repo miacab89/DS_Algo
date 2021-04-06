@@ -33,7 +33,8 @@ class LinkedList {
 
     getFirst() {
         // return this.head;
-        return this.getAt(0)
+        // ..OR
+        return this.getAt(0);
     }
 
     getLast() {
@@ -48,6 +49,8 @@ class LinkedList {
     //     }
     //     last = last.next;  
     // }
+    // ...OR
+    
         return this.getAt(this.size() - 1); 
 }
     
@@ -151,12 +154,23 @@ class LinkedList {
 
     }
 
-    ForEach() {
-         
+    forEach(fn) {
+        let node = this.head;
+        let counter = 0;
+        while (node) {
+            fn(node, counter);
+            node = node.next;
+            counter++;
+        }
     }
- 
 
-
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 };
 
 module.exports = { Node, LinkedList };
